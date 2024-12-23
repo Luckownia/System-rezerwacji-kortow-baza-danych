@@ -146,6 +146,7 @@ ________________________________________
 #### Przykład:
 Zapytanie wstawiające rekord:
     ```sql
+    
     INSERT INTO uzytkownicy (imie, nazwisko, email, telefon) 
     VALUES ('Fabian', 'Drwalczyk', 'fabian@gmail.com', '123456789');
 
@@ -168,6 +169,7 @@ Zapytanie wstawiające rekord:
 #### Przykład błędnej rezerwacji:
 Zapytanie:
     ```sql
+    
     INSERT INTO rezerwacje (id_kortu, godzina_start, godzina_koniec) 
     VALUES (1, '18:00:00', '20:00:00');
 
@@ -185,9 +187,9 @@ ________________________________________
 ## 5. Przykłady użycia
 
 ### 5.1. Tworzenie nowego użytkownika
-    ```sql
-    INSERT INTO uzytkownicy (imie, nazwisko, email, telefon)
-    VALUES ('Wojciech', 'Barnas', 'ojwojtek@example.com', '123456789');
+        ```sql
+        INSERT INTO uzytkownicy (imie, nazwisko, email, telefon)
+        VALUES ('Wojciech', 'Barnas', 'ojwojtek@example.com', '123456789');
 ### 5.2. Rezerwacja kortu
     ```sql
     CALL dodaj_rezerwacje(1, 4, '2024-12-26', '14:00');
