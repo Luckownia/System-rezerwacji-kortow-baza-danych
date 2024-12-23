@@ -77,14 +77,14 @@ Dodaje nową rezerwację dla użytkownika.
   - `godzina_zakonczenia` (TIME) - Godzina zakończenia rezerwacji
 
 - **Przykład użycia:**
-```sql
-CALL dodaj_rezerwacje(
-    1,               -- ID użytkownika
-    1,               -- ID kortu
-    '2024-12-26',    -- Data rezerwacji
-    '10:00:00',      -- Godzina rozpoczęcia
-    '12:00:00'       -- Godzina zakończenia
-);
+    ```sql
+    CALL dodaj_rezerwacje(
+        1,               -- ID użytkownika
+        1,               -- ID kortu
+        '2024-12-26',    -- Data rezerwacji
+        '10:00:00',      -- Godzina rozpoczęcia
+        '12:00:00'       -- Godzina zakończenia
+    );
 
 ### 3.2. `sprawdz_dostepnosc_kortow`
 Sprawdza dostępność kortów w podanym terminie.
