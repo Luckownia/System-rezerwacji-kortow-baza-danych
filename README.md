@@ -145,9 +145,9 @@ ________________________________________
 
 #### Przykład:
 Zapytanie wstawiające rekord:
-```sql
-INSERT INTO uzytkownicy (imie, nazwisko, email, telefon) 
-VALUES ('Fabian', 'Drwalczyk', 'fabian@gmail.com', '123456789');
+    ```sql
+    INSERT INTO uzytkownicy (imie, nazwisko, email, telefon) 
+    VALUES ('Fabian', 'Drwalczyk', 'fabian@gmail.com', '123456789');
 
 ### 4.2 Trigger: `sprawdz_godziny_otwarcia`
 - **Typ:** BEFORE INSERT
@@ -167,9 +167,9 @@ VALUES ('Fabian', 'Drwalczyk', 'fabian@gmail.com', '123456789');
 
 #### Przykład błędnej rezerwacji:
 Zapytanie:
-```sql
-INSERT INTO rezerwacje (id_kortu, godzina_start, godzina_koniec) 
-VALUES (1, '18:00:00', '20:00:00');
+    ```sql
+    INSERT INTO rezerwacje (id_kortu, godzina_start, godzina_koniec) 
+    VALUES (1, '18:00:00', '20:00:00');
 
 #### Efekt:
 Trigger przerwie operację, jeśli godziny otwarcia kortu to `08:00:00 - 16:00:00`.
@@ -185,21 +185,21 @@ ________________________________________
 ## 5. Przykłady użycia
 
 ### 5.1. Tworzenie nowego użytkownika
-```sql
-INSERT INTO uzytkownicy (imie, nazwisko, email, telefon)
-VALUES ('Wojciech', 'Barnas', 'ojwojtek@example.com', '123456789');
+    ```sql
+    INSERT INTO uzytkownicy (imie, nazwisko, email, telefon)
+    VALUES ('Wojciech', 'Barnas', 'ojwojtek@example.com', '123456789');
 ### 5.2. Rezerwacja kortu
-```sql
-CALL dodaj_rezerwacje(1, 4, '2024-12-26', '14:00');
+    ```sql
+    CALL dodaj_rezerwacje(1, 4, '2024-12-26', '14:00');
 ### 5.3. Sprawdzenie dostępności kortów
-```sql
-CALL sprawdz_dostepnosc_kortow('2024-12-26', '12:00', '14:00');
+    ```sql
+    CALL sprawdz_dostepnosc_kortow('2024-12-26', '12:00', '14:00');
 ### 5.4. Usunięcie rezerwacji
-```sql
-CALL usun_rezerwacje(3);
+    ```sql
+    CALL usun_rezerwacje(3);
 ### 5.5. Opłacenie płatności
-```sql
-CALL oplac_platnosc(3);
+    ```sql
+    CALL oplac_platnosc(3);
 
 
 
