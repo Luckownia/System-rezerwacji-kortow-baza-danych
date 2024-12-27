@@ -1,4 +1,4 @@
-# Dokumentacja użytkowa bazy danych systemu rezerwacji kortów tenisowych
+# Dokumentacja użytkowa bazy danych systemu rezerwacji kortów sportowych
 
 ## Spis treści
 1. [Opis struktury bazy danych](#opis-struktury-bazy-danych)
