@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `korty` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `korty`;
+-- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
 --
--- Host: localhost    Database: tenis
+-- Host: localhost    Database: korty
 -- ------------------------------------------------------
--- Server version	8.0.39
+-- Server version	8.0.40
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -87,7 +89,7 @@ CREATE TABLE `platnosci` (
   PRIMARY KEY (`id_platnosci`),
   KEY `platnosci_ibfk_1` (`id_rezerwacji`),
   CONSTRAINT `platnosci_ibfk_1` FOREIGN KEY (`id_rezerwacji`) REFERENCES `rezerwacje` (`id_rezerwacji`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +98,7 @@ CREATE TABLE `platnosci` (
 
 LOCK TABLES `platnosci` WRITE;
 /*!40000 ALTER TABLE `platnosci` DISABLE KEYS */;
-INSERT INTO `platnosci` VALUES (15,8,300.00,'opłacona','2024-12-22'),(16,10,105.00,'opłacona','2024-12-22'),(17,11,60.00,'opłacona','2024-12-22'),(20,8,300.00,'opłacona','2024-12-22'),(21,9,180.00,'oczekująca',NULL),(22,18,200.00,'opłacona','2024-12-22'),(23,19,150.00,'opłacona','2024-12-22'),(24,20,200.00,'opłacona','2024-12-22'),(25,21,250.00,'opłacona','2024-12-22'),(26,19,150.00,'opłacona','2024-12-22'),(27,19,150.00,'opłacona',NULL),(28,19,150.00,'opłacona',NULL),(29,20,250.00,'opłacona','2024-12-22'),(30,21,300.00,'opłacona','2024-12-25'),(31,21,100.00,'opłacona',NULL),(33,16,45.00,'opłacona','2024-12-22'),(34,15,50.00,'oczekująca','2024-12-22'),(35,18,100.00,'oczekująca','2024-12-22'),(36,25,100.00,'oczekująca','2024-12-22'),(40,10,150.00,'opłacona','2024-12-22'),(41,27,120.00,'opłacona','2024-12-22'),(42,29,80.00,'opłacona','2024-12-22'),(43,30,80.00,'opłacona','2024-12-22'),(44,31,80.00,'opłacona','2024-12-22'),(45,32,80.00,'opłacona','2024-12-22');
+INSERT INTO `platnosci` VALUES (15,8,300.00,'opłacona','2024-12-22'),(17,11,60.00,'opłacona','2024-12-22'),(20,8,300.00,'opłacona','2024-12-22'),(21,9,180.00,'oczekująca',NULL),(22,18,200.00,'opłacona','2024-12-22'),(23,19,150.00,'opłacona','2024-12-22'),(24,20,200.00,'opłacona','2024-12-22'),(25,21,250.00,'opłacona','2024-12-22'),(26,19,150.00,'opłacona','2024-12-22'),(27,19,150.00,'opłacona',NULL),(28,19,150.00,'opłacona',NULL),(29,20,250.00,'opłacona','2024-12-22'),(30,21,300.00,'opłacona','2024-12-25'),(31,21,100.00,'opłacona',NULL),(33,16,45.00,'opłacona','2024-12-22'),(34,15,50.00,'opłacona','2025-01-08'),(35,18,100.00,'oczekująca','2024-12-22'),(36,25,100.00,'oczekująca','2024-12-22'),(41,27,120.00,'opłacona','2024-12-22'),(42,29,80.00,'opłacona','2024-12-22'),(43,30,80.00,'opłacona','2024-12-22'),(44,31,80.00,'opłacona','2024-12-22'),(45,32,80.00,'opłacona','2024-12-22'),(46,33,100.00,'oczekująca',NULL);
 /*!40000 ALTER TABLE `platnosci` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +122,7 @@ CREATE TABLE `rezerwacje` (
   KEY `id_kortu` (`id_kortu`),
   CONSTRAINT `rezerwacje_ibfk_1` FOREIGN KEY (`id_uzytkownika`) REFERENCES `uzytkownicy` (`id_uzytkownika`),
   CONSTRAINT `rezerwacje_ibfk_2` FOREIGN KEY (`id_kortu`) REFERENCES `korty` (`id_kortu`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,7 +131,7 @@ CREATE TABLE `rezerwacje` (
 
 LOCK TABLES `rezerwacje` WRITE;
 /*!40000 ALTER TABLE `rezerwacje` DISABLE KEYS */;
-INSERT INTO `rezerwacje` VALUES (8,1,1,'2024-12-25','10:00:00','12:00:00','zakończony'),(9,2,1,'2024-12-25','11:00:00','13:00:00','zarezerwowany'),(10,3,2,'2024-12-22','14:00:00','15:00:00','zakończony'),(11,1,1,'2024-12-22','14:00:00','16:00:00','zakończony'),(12,1,1,'2024-12-22','14:00:00','16:00:00','zarezerwowany'),(13,2,1,'2024-12-22','14:00:00','16:00:00','zarezerwowany'),(14,1,1,'2024-12-22','14:00:00','16:00:00','zarezerwowany'),(15,1,1,'2024-12-22','10:00:00','11:00:00','zarezerwowany'),(16,5,5,'2024-12-22','12:00:00','13:00:00','zakończony'),(17,1,1,'2024-12-22','08:00:00','09:00:00','zarezerwowany'),(18,1,1,'2024-12-22','10:00:00','12:00:00','zakończony'),(19,2,2,'2024-12-23','14:00:00','15:30:00','zakończony'),(20,1,1,'2024-12-25','10:00:00','12:00:00','zakończony'),(21,2,1,'2024-12-25','11:00:00','13:00:00','zakończony'),(24,3,3,'2024-12-22','14:00:00','16:00:00','oczekująca'),(25,1,1,'2024-12-22','10:00:00','12:00:00','oczekująca'),(26,1,1,'2024-12-22','10:00:00','12:00:00','oczekująca'),(27,5,4,'2024-12-22','10:00:00','12:00:00','zakończony'),(28,5,2,'2024-12-22','10:00:00','12:00:00','oczekująca'),(29,1,2,'2024-12-23','10:00:00','12:00:00','zakończony'),(30,1,2,'2024-12-24','10:00:00','12:00:00','zakończony'),(31,1,2,'2024-12-29','10:00:00','12:00:00','zarezerwowana'),(32,1,2,'2024-12-30','10:00:00','12:00:00','zarezerwowana');
+INSERT INTO `rezerwacje` VALUES (8,1,1,'2024-12-25','10:00:00','12:00:00','zakończony'),(9,2,1,'2024-12-25','11:00:00','13:00:00','zarezerwowany'),(11,1,1,'2024-12-22','14:00:00','16:00:00','zakończony'),(12,1,1,'2024-12-22','14:00:00','16:00:00','zarezerwowany'),(13,2,1,'2024-12-22','14:00:00','16:00:00','zarezerwowany'),(14,1,1,'2024-12-22','14:00:00','16:00:00','zarezerwowany'),(15,1,1,'2024-12-22','10:00:00','11:00:00','zarezerwowana'),(16,5,5,'2024-12-22','12:00:00','13:00:00','zakończony'),(17,1,1,'2024-12-22','08:00:00','09:00:00','zarezerwowany'),(18,1,1,'2024-12-22','10:00:00','12:00:00','zakończony'),(19,2,2,'2024-12-23','14:00:00','15:30:00','zakończony'),(20,1,1,'2024-12-25','10:00:00','12:00:00','zakończony'),(21,2,1,'2024-12-25','11:00:00','13:00:00','zakończony'),(24,3,3,'2024-12-22','14:00:00','16:00:00','oczekująca'),(25,1,1,'2024-12-22','10:00:00','12:00:00','oczekująca'),(26,1,1,'2024-12-22','10:00:00','12:00:00','oczekująca'),(27,5,4,'2024-12-22','10:00:00','12:00:00','zakończony'),(28,5,2,'2024-12-22','10:00:00','12:00:00','oczekująca'),(29,1,2,'2024-12-23','10:00:00','12:00:00','zakończony'),(30,1,2,'2024-12-24','10:00:00','12:00:00','zakończony'),(31,1,2,'2024-12-29','10:00:00','12:00:00','zarezerwowana'),(32,1,2,'2024-12-30','10:00:00','12:00:00','zarezerwowana'),(33,1,1,'2024-12-26','10:00:00','12:00:00','oczekująca');
 /*!40000 ALTER TABLE `rezerwacje` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -234,7 +236,7 @@ CREATE TABLE `uzytkownicy` (
   `data_rejestracji` date DEFAULT NULL,
   PRIMARY KEY (`id_uzytkownika`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -243,7 +245,7 @@ CREATE TABLE `uzytkownicy` (
 
 LOCK TABLES `uzytkownicy` WRITE;
 /*!40000 ALTER TABLE `uzytkownicy` DISABLE KEYS */;
-INSERT INTO `uzytkownicy` VALUES (1,'Wojciech','Kowalski','wojciech.kowalski@example.com','129971261','2024-12-21'),(2,'Jakub','Nowak','jakub.nowak@example.com','123976547','2024-12-21'),(3,'Krzysztof','Lewandowski','krzysztof.lewandowski@example.com','789654321','2024-12-21'),(4,'Magdalena','Adamska','magdalena.adamska@example.com','123123123','2024-12-15'),(5,'Piotr','Nowak','piotr.nowak@example.com','123987654','2024-12-22'),(7,'Jan','Kowalski','jan.kowalski@example.com',NULL,'2024-12-22'),(8,'Anna','Nowak','anna.nowak@example.com',NULL,'2024-12-01'),(9,'Marek','Lewandowski','marek.lewandowski@example.com',NULL,'2024-12-22');
+INSERT INTO `uzytkownicy` VALUES (1,'Wojciech','Kowalski','wojciech.kowalski@example.com','129971261','2024-12-21'),(2,'Jakub','Nowak','jakub.nowak@example.com','123976547','2024-12-21'),(3,'Krzysztof','Lewandowski','krzysztof.lewandowski@example.com','789654321','2024-12-21'),(4,'Magdalena','Adamska','magdalena.adamska@example.com','123123123','2024-12-15'),(5,'Piotr','Nowak','piotr.nowak@example.com','123987654','2024-12-22'),(7,'Jan','Kowalski','jan.kowalski@example.com',NULL,'2024-12-22'),(8,'Anna','Nowak','anna.nowak@example.com',NULL,'2024-12-01'),(9,'Marek','Lewandowski','marek.lewandowski@example.com',NULL,'2024-12-22'),(10,'Wojciech','Barnas','ojwojtek@example.com','123456789','2024-12-23'),(11,'Fabian','Drwalczyk','fabian@gmail.com','123456789','2024-12-23');
 /*!40000 ALTER TABLE `uzytkownicy` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -267,11 +269,11 @@ DELIMITER ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
--- Dumping events for database 'tenis'
+-- Dumping events for database 'korty'
 --
 
 --
--- Dumping routines for database 'tenis'
+-- Dumping routines for database 'korty'
 --
 /*!50003 DROP PROCEDURE IF EXISTS `dodaj_rezerwacje` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -286,9 +288,9 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `dodaj_rezerwacje`(
     IN uzytkownik_id INT, 
     IN kort_id INT, 
-    IN godzina_start TIME,  -- Akceptujemy tylko godzinę
-    IN godzina_koniec TIME,  -- Akceptujemy tylko godzinę
-    IN data_rezerwacji DATE -- Podajemy datę rezerwacji
+    IN godzina_start TIME,  
+    IN godzina_koniec TIME,  
+    IN data_rezerwacji DATE 
 )
 BEGIN
     DECLARE dostepny INT;
@@ -296,24 +298,33 @@ BEGIN
     DECLARE pelna_godzina_koniec DATETIME;
     DECLARE cena_za_godzine DECIMAL(10, 2);
     DECLARE koszt DECIMAL(10, 2);
-    DECLARE czas_trwania INT;
+    DECLARE czas_trwania DECIMAL(10,2);
+    DECLARE nowa_rezerwacja_id INT;
 
     -- Tworzymy pełny datetime na podstawie podanej daty i godziny
-    SET pelna_godzina_start = CONCAT(data_rezerwacji, ' ', godzina_start);
-    SET pelna_godzina_koniec = CONCAT(data_rezerwacji, ' ', godzina_koniec);
+    SET pelna_godzina_start = STR_TO_DATE(CONCAT(data_rezerwacji, ' ', godzina_start), '%Y-%m-%d %H:%i:%s');
+    SET pelna_godzina_koniec = STR_TO_DATE(CONCAT(data_rezerwacji, ' ', godzina_koniec), '%Y-%m-%d %H:%i:%s');
+
+    -- Sprawdzamy, czy godzina_start jest mniejsza od godzina_koniec
+    IF pelna_godzina_start >= pelna_godzina_koniec THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Godzina rozpoczęcia rezerwacji musi być wcześniejsza niż godzina zakończenia.';
+    END IF;
 
     -- Sprawdzamy, czy w tym czasie nie ma innych rezerwacji na danym korcie
     SELECT COUNT(*) INTO dostepny
     FROM rezerwacje
     WHERE id_kortu = kort_id 
     AND (
-        (pelna_godzina_start < godzina_koniec AND pelna_godzina_koniec > godzina_start) -- Sprawdzanie czy czasy się nakładają
+        (pelna_godzina_start < godzina_koniec AND pelna_godzina_koniec > godzina_start)
     );
 
     IF dostepny = 0 THEN
         -- Jeśli nie ma nakładającej się rezerwacji, dodajemy nową
         INSERT INTO rezerwacje (id_uzytkownika, id_kortu, data_rezerwacji, godzina_start, godzina_koniec, status)
-        VALUES (uzytkownik_id, kort_id, data_rezerwacji, pelna_godzina_start, pelna_godzina_koniec, 'oczekująca');
+        VALUES (uzytkownik_id, kort_id, data_rezerwacji, godzina_start, godzina_koniec, 'oczekująca');
+        
+        -- Pobieramy ID nowo dodanej rezerwacji
+        SET nowa_rezerwacja_id = LAST_INSERT_ID();
         
         -- Pobieramy cenę za godzinę z tabeli cennik
         SELECT c.cena_za_godzine
@@ -330,7 +341,7 @@ BEGIN
         -- Jeśli koszt został obliczony, dodajemy go do tabeli 'platnosci'
         IF koszt IS NOT NULL THEN
             INSERT INTO platnosci (id_rezerwacji, kwota, status, data_platnosci)
-            VALUES (LAST_INSERT_ID(), koszt, 'oczekująca', NULL);  -- Ustawiamy NULL, bo data płatności będzie ustalana później
+            VALUES (nowa_rezerwacja_id, koszt, 'oczekująca', NULL);  
         ELSE
             SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Brak odpowiedniego cennika dla tej rezerwacji.';
         END IF;
@@ -529,4 +540,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-22 19:17:11
+-- Dump completed on 2025-02-02  9:05:49
